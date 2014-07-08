@@ -15,6 +15,6 @@ var app = angular.module("APP", ["ngRoute"])
             controller: aboutController
         })
         
-        .otherwise({redirectTo: "/about"});
+        .otherwise({redirectTo: "/welcome"});
         
     }]);
