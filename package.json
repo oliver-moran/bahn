@@ -5,13 +5,15 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "start": "node bahn.js"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/oliver-moran/bahn.git"
   },
   "keywords": [
+    "application",
+    "framework",
     "bootstrap",
     "angularjs",
     "angular",
@@ -22,7 +24,13 @@
     "node",
     "expressjs",
     "express",
-    "nedb"
+    "http",
+    "server",
+    "nedb",
+    "no sql",
+    "database",
+    "socket.io",
+    "web socket"
   ],
   "author": "Oliver Moran <oliver.moran@gmail.com>",
   "license": "MIT",
@@ -32,6 +40,7 @@
   "homepage": "https://github.com/oliver-moran/bahn",
   "dependencies": {
     "express": "~4.5.1",
-    "nedb": "~0.10.6"
+    "nedb": "~0.10.6",
+    "socket.io": "~1.0.6"
   }
 }

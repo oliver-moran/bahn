@@ -1,4 +1,5 @@
 {
     "port": 3000,
-    "mongo": false
+    "database": true,
+    "sockets": true
 }
