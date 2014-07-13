@@ -21,11 +21,17 @@
 
         <script src="/socket.io/socket.io.js"></script>
         <script>
-            var socket = io(window.location.protocol + "//" + window.location.hostname);
+            var socket = io.connect();
+            // create a nice means to stop listening
+            // http://stackoverflow.com/questions/9418697/how-to-unsubscribe-from-a-socket-io-subscription
+            socket.off = socket.removeListener;
         </script>
+        <script src="js/vendor/json-rpc-0.0.2.min.js"></script>
         
         <link rel="stylesheet" href="css/vendor/bootstrap-3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor/bootstrap-3.2.0/css/bootstrap-theme.min.css">
+        
+        <link rel="stylesheet" href="css/vendor/animate-3.2.0.css">
         
         <link rel="stylesheet" href="css/common.css">
     </head>
@@ -34,39 +40,20 @@
             <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
 
-        <div class="navbar navbar-default" role="navigation" ng-controller="navbarController" ng-cloak>
-            <div class="container">
-                <div class="navbar-header">
-                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                        <span class="sr-only">Toggle navigation</span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </button>
-                    <a class="navbar-brand" href="{{items[0].href}}" onfocus="this.blur();">bahn</a>
-                </div>
-                <div class="collapse navbar-collapse">
-                    <ul class="nav navbar-nav">
-                        <li ng-repeat="item in items" ng-class="getClassName(item)">
-                            <a href="{{item.href}}" onfocus="this.blur();">{{item.text}}</a>
-                        </li>
-                    </ul>
-                </div><!--/.nav-collapse -->
-            </div>
-        </div>
-
+        <ng-include src="'html/header.html'"></ng-include>
         <ng-view ng-cloak></ng-view>
+        <ng-include src="'html/footer.html'"></ng-include>
 
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.10.2.min.js"><\/script>')</script>
         <script src="css/vendor/bootstrap-3.2.0/js/bootstrap.min.js"></script>
+        <script src="js/vendor/animate.css.js-1.0.2/animate.css.min.js"></script>
+        <script src="js/vendor/animate.css.js-1.0.2/jquery.animate.css.js"></script>
         <script src="js/plugins.js"></script>
+
+        <!-- Your AngularJS JS files here: -->
         <script src="js/main.js"></script>
-        
-        <!-- Add Angular Controller JS files here -->
-        <script src="js/navbar.js"></script>
-        <script src="js/about.js"></script>
-        <script src="js/chat.js"></script>
+        <script src="js/controllers.js"></script>        
         
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>

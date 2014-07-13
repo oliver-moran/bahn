@@ -5,16 +5,16 @@ var app = angular.module("APP", ["ngRoute"])
 
     $routeProvider
 
-    .when("/about", {
-        templateUrl: 'html/about.html',
-        controller: aboutController
+    .when("/welcome", {
+        templateUrl: 'html/welcome.html',
+        controller: welcomeController
     })
 
-    .when("/chat", {
-        templateUrl: 'html/chat.html',
-        controller: chatController
+    .when("/features", {
+        templateUrl: 'html/features.html',
+        controller: featuresController
     })
 
-    .otherwise({redirectTo: "/about"});
+    .otherwise({redirectTo: "/welcome"});
 
 }]);

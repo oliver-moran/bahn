@@ -2,6 +2,11 @@
   "name": "bahn",
   "version": "0.0.0",
   "description": "A boilerplate application using Bootstrap Angular H5BP NodeJS (BAHN).",
+  "config": {
+    "port": 3000,
+    "database": true,
+    "sockets": true
+  },
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -41,6 +46,7 @@
   "dependencies": {
     "express": "~4.5.1",
     "nedb": "~0.10.6",
-    "socket.io": "~1.0.6"
+    "socket.io": "~1.0.6",
+    "json-rpc.js": "~0.0.2"
   }
 }

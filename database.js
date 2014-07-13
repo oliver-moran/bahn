@@ -1,7 +1,8 @@
 var Datastore = require('nedb');
-var db = {};
+var db = {}, bahn;
 
-function Database () {
+function Database (_bahn) {
+    bahn = _bahn;
     db.store = new Datastore({ filename: './data/store.db' });
     db.store.loadDatabase();
 };

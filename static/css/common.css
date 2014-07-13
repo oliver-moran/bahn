@@ -1,5 +1,9 @@
 .logo {
     width: auto;
-    height: 3.5em;
-    padding: 0px 0.5em;
+    height: 3em;
+    margin: 0 0.75em;
+}
+
+.vendor .logo {
+    height: 2.25em;
 }
