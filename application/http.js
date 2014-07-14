@@ -11,6 +11,6 @@ app.get('/api/bahn/version', function(req, res){
     res.send(bahn.version);
 });
 
-app.use("/", express.static('./static'));
+app.use("/", express.static('./application/static'));
 
 module.exports = HTTP;
