@@ -22,11 +22,7 @@
         <script src="/socket.io/socket.io.js"></script>
         <script>
             var socket = io.connect();
-            // create a nice means to stop listening
-            // http://stackoverflow.com/questions/9418697/how-to-unsubscribe-from-a-socket-io-subscription
-            socket.off = socket.removeListener;
         </script>
-        <script src="js/vendor/json-rpc-0.0.2.min.js"></script>
         
         <link rel="stylesheet" href="css/vendor/bootstrap-3.2.0/css/bootstrap.min.css">
         <link rel="stylesheet" href="css/vendor/bootstrap-3.2.0/css/bootstrap-theme.min.css">

@@ -37,13 +37,12 @@ var featuresController = ["$scope", "$http", function ($scope, $http) {
     }
     
     $scope.sendMessage = function () {
-        var nChatMessage = new JSON_RPC.Notification("chatMessage", $scope.message.trim());
-        socket.emit(nChatMessage.method, nChatMessage);
+        socket.emit("chatMessage", $scope.message.trim());
         $scope.message = "";
     };
 
-    socket.on("newMessage", function (rpc) {
-        $scope.messageList.push( { text: rpc.params.text, time: rpc.params.time } );
+    socket.on("newMessage", function (data) {
+        $scope.messageList.push( { text: data.text, time: data.time } );
         $scope.$apply()
     });
 }];

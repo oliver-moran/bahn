@@ -1,4 +1,3 @@
-var JSON_RPC = require("json-rpc.js");
 var io, database, bahn;
 
 function Socket(_http, _database, _bahn) {
@@ -11,17 +10,17 @@ function Socket(_http, _database, _bahn) {
     });
 }
 
-function chatMessage(rpc) {
+function chatMessage(text) {
     var hours = (new Date()).getHours();
     var minutes = (new Date()).getMinutes();
     var seconds = (new Date()).getSeconds();
-    var nNewMessage = new JSON_RPC.Notification("newMessage", {
-        text: rpc.params,
+    var data = {
+        text: text,
         time: ((hours < 10) ? "0" + hours : hours) + ":" 
             + ((minutes < 10) ? "0" + minutes : minutes)+ ":" 
             + ((seconds < 10) ? "0" + seconds : seconds)
-    });
-    io.sockets.emit(nNewMessage.method, nNewMessage);
+    };
+    io.sockets.emit("newMessage", data);
 }
 
 module.exports = Socket;
