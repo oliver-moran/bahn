@@ -1,9 +1,17 @@
 .logo {
     width: auto;
     height: 3em;
-    margin: 0 0.75em;
+    margin: 0.25em 0.75em 2.25em 0.75em;
 }
 
 .vendor .logo {
     height: 2.25em;
+}
+
+.done {
+    text-decoration: line-through;
+}
+
+.hand {
+    cursor: pointer;
 }

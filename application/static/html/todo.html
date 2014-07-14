@@ -1,0 +1,33 @@
+<section>
+
+    <div class="container">
+        
+        <h1>Example Application</h1>
+        <p>This classic TODO example put bahn through its paces using Bootstrap, AngularJS, H5BP, and NodeJS.</p>
+        <p>The bundled NoSQL database (NeDB or MongoDB) stores tasks on the server side. The HTTP server (Express) serves up the tasks from the database (see <a href="/api/todo/tasks">/api/todo/tasks</a>). Web sockets (Socket.io) broadcasts changes to multiple clients instantly.</li>
+
+        <h3 class="text-center">Compulsary TODO Example</h3>
+        <div class="form-group" ng-repeat="task in taskList">
+            <div class="input-group col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                <span class="input-group-addon">
+                    <input type="checkbox" ng-model="task.status" ng-click="updateTask(task)" />
+                </span>
+                <button type="button" class="form-control text-left" ng-click="updateTask(task)" ng-class="(task.status) ? 'done' : ''">{{task.text}}</button>
+                <span class="input-group-addon">
+                    <span class="glyphicon glyphicon-trash hand" ng-click="removeTask(task)"><!-- trash icon --></span>
+                </span>
+            </div>
+        </div>
+    
+        <div class="form-group">
+            <div class="input-group col-md-offset-3 col-md-6 col-sm-offset-2 col-sm-8">
+                <span class="input-group-addon">
+                    <input type="checkbox" ng-model="task.status" />
+                </span>
+                <input type="text" class="form-control" ng-keydown="onKeyDown($event)" placeholder="Type new task and press RETURN" ng-class="(task.status && task.text) ? 'done' : ''" ng-model="task.text" />
+            </div>
+        </div>
+        
+    </div>
+    
+</section>
