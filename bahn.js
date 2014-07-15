@@ -19,11 +19,11 @@ console.info("Version: " + bahn.package.version + "\n");
 
 // fire up the database services...
 if (bahn.package.config.database) {
-    // Database uses NEDB, which promises to be transparant with Mongo
+    // Database uses NEDB, which promises to be transparant with MongoDB
     // https://github.com/louischatriot/nedb
     Database = require("./application/database.js");
     bahn.database = new Database();
-    console.log(" - NEDB database module is ready.");
+    console.log(" - NeDB/MongoDB database module is ready.");
 }
 
 // ...crank up the HTTP service...
