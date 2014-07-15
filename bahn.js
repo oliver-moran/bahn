@@ -9,7 +9,7 @@ var FS = require("fs");
 global.bahn = {};
 
 // load up package.json
-bahn.package = JSON.parse(FS.readFileSync("package.json" ));
+bahn.package = require("./package");
 console.info("bahn configuration file loaded. Initialising services:\n");
 
 // show the pretty banner and version info
