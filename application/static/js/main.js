@@ -20,3 +20,11 @@ var app = angular.module("APP", ["ngRoute"])
     .otherwise({redirectTo: "/welcome"});
 
 }]);
+
+app.run(function ($rootScope) {
+    
+    /* GLOBAL VARIABLES (OH, SO BAD!) */
+    
+    $rootScope.year = (new Date()).getFullYear();
+    
+});

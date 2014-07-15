@@ -1,17 +1,13 @@
-.logo {
+footer a img {
     width: auto;
-    height: 3em;
-    margin: 0.25em 0.75em 2.25em 0.75em;
-}
-
-.vendor .logo {
     height: 2.25em;
+    margin: 0.25em 0.75em;
 }
 
-.done {
-    text-decoration: line-through;
+footer a:first-child img {
+    height: 3em;
 }
 
-.hand {
-    cursor: pointer;
+footer {
+    padding-bottom: 2.25em;
 }

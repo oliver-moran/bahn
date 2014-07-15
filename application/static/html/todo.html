@@ -12,9 +12,9 @@
                 <span class="input-group-addon">
                     <input type="checkbox" ng-model="task.status" ng-click="updateTask(task)" />
                 </span>
-                <button type="button" class="form-control text-left" ng-click="updateTask(task)" ng-class="(task.status) ? 'done' : ''">{{task.text}}</button>
+                <button type="button" class="form-control text-left" ng-click="updateTask(task)" ng-style="{ 'text-decoration': (task.status) ? 'line-through' : '' }">{{task.text}}</button>
                 <span class="input-group-addon">
-                    <span class="glyphicon glyphicon-trash hand" ng-click="removeTask(task)"><!-- trash icon --></span>
+                    <span class="glyphicon glyphicon-trash" style="cursor: pointer;" ng-click="removeTask(task)"><!-- trash icon --></span>
                 </span>
             </div>
         </div>
@@ -24,7 +24,7 @@
                 <span class="input-group-addon">
                     <input type="checkbox" ng-model="task.status" />
                 </span>
-                <input type="text" class="form-control" ng-keydown="onKeyDown($event)" placeholder="Type new task and press RETURN" ng-class="(task.status && task.text) ? 'done' : ''" ng-model="task.text" />
+                <input type="text" class="form-control" ng-keydown="onKeyDown($event)" placeholder="Type new task and press RETURN" ng-style="{ 'text-decoration': (task.status && task.text) ? 'line-through' : '' }" ng-model="task.text" />
             </div>
         </div>
         
