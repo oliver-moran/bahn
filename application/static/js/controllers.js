@@ -1,12 +1,10 @@
 // The Welcome Controller
 var welcomeController = ["$scope", function ($scope, $http) {
-    onNewPage("bahn - Welcome");
+    // NOTE: Nothing needed here
 }];
 
 // The TODO Controller
 var todoController = ["$scope", "$http", function ($scope, $http) {
-    onNewPage("bahn - Example");
-    
     $scope.task = { text: "", status: false };
     $scope.taskList = null;
     
@@ -41,24 +39,16 @@ var todoController = ["$scope", "$http", function ($scope, $http) {
     
     socket.on("updateTask", function (data) {
         $scope.taskList.forEach(function (task) {
-            if (task._id == data._id) task.status = data.status;
+            if (task.uuid == data.uuid) task.status = data.status;
         });
         $scope.$apply();
     });
     
     socket.on("removeTask", function (data) {
         $scope.taskList.forEach(function (task, i) {
-            if (task._id == data._id) $scope.taskList.splice(i, 1);
+            if (task.uuid == data.uuid) $scope.taskList.splice(i, 1);
         });
         
         $scope.$apply();
     });
 }];
-
-// common set up code for when a user enters a routed page
-function onNewPage(title) {
-    document.title = title;
-    window.scrollTo(0, 0);
-    $(".navbar-nav li").removeClass("active");
-    $(".navbar-nav li a[href='" + window.location.hash + "']").parent().addClass("active");
-}
