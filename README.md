@@ -29,12 +29,12 @@ Configuration is through the config setting in `/package.json`. The configuratio
 
 - `port`: (default: `8080`) The port number used by HTTP and WebSocket servers.
 
-- `database`: (default: `true`) If [`truthy`](http://docs.nodejitsu.com/articles/javascript-conventions/what-are-truthy-and-falsy-values) then the database module will be loaded. The type of the `truthy` value implicitly determines the type of database to use:
+- `database`: (default: `true`) If [truthy](http://docs.nodejitsu.com/articles/javascript-conventions/what-are-truthy-and-falsy-values) then the database module will be loaded. The type of the truthy value implicitly determines the type of database to use:
 
   - If the value is a string then MongoDB will be used as the database. The value of the string may be the name of the local database to use (e.g. `bahn`) or a path to a remote database (e.g. `username:password@example.com/bahn`).
   - Otherwise, a NeDB database will be used.
   
-- `sockets`: (default: `true`) If `truthy` then the WebSocket module will be loaded.
+- `sockets`: (default: `true`) If truthy then the WebSocket module will be loaded.
 
 ## License ##
 
