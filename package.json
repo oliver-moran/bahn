@@ -1,9 +1,9 @@
 {
   "name": "bahn",
-  "version": "0.0.0",
+  "version": "0.0.1",
   "description": "A boilerplate application using Bootstrap Angular H5BP NodeJS (BAHN).",
   "config": {
-    "port": 3000,
+    "port": 8080,
     "database": true,
     "sockets": true
   },
@@ -46,8 +46,8 @@
   "dependencies": {
     "express": "~4.5.1",
     "nedb": "~0.10.6",
+    "mongojs": "~0.13.0",
     "socket.io": "~1.0.6",
-    "node-uuid": "~1.4.1",
-    "mongodb": "~1.4.7"
+    "node-uuid": "~1.4.1"
   }
 }
