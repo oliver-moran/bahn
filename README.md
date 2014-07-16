@@ -1,7 +1,7 @@
 bahn
 ====
 
-A ready-for-road application stack for HTML5 combining [Bootstrap](http://getbootstrap.com), [AngularJS](https://angularjs.org/), [H5BP](http://html5boilerplate.com/), and [Node.js](http://nodejs.org/) (BAHN).
+A ready-for-road HTML5 application stack combining [Bootstrap](http://getbootstrap.com), [AngularJS](https://angularjs.org/), [H5BP](http://html5boilerplate.com/), and [Node.js](http://nodejs.org/) (BAHN).
 
 bahn comes pre-rolled a NoSQL database ([NeDB](https://github.com/louischatriot/nedb) or [MongoDB](http://www.mongodb.org/)), a HTTP application server ([Express](http://expressjs.com/)), and [WebSocket](http://www.html5rocks.com/en/tutorials/websockets/basics/) support for dynamic applications ([Socket.io](http://socket.io/)).
 
