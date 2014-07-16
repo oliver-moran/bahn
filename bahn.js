@@ -23,7 +23,9 @@ if (bahn.package.config.database) {
     // https://github.com/louischatriot/nedb
     Database = require("./application/database.js");
     bahn.database = new Database();
-    console.log(" - NeDB/MongoDB database module is ready.");
+    console.log(" - "
+        + ((typeof bahn.package.config.database == "string") ? "MongoDB" : "NeDB")
+        + " database is ready.");
 }
 
 // ...crank up the HTTP service...
