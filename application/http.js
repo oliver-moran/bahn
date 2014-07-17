@@ -23,7 +23,7 @@ app.get("/api/todo/tasks", function(req, res){
 });
 
 // static pages are served from /application/static/
-app.use("/", Express.static("./application/static"));
+app.use("/", Express.static("./application/public"));
 
 // if all of the above failed then serve the H5BP 404
 app.use(function(req, res, next){
