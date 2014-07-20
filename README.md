@@ -34,6 +34,10 @@ Configuration is through the config setting in `/package.json`. The configuratio
   
 - `sockets`: (default: `true`) If truthy then the WebSocket module will be loaded.
 
+Configuration can also be set from the command line. For example:
+
+    node bahn.js --port 8081 --database false --sockets false
+
 ## License ##
 
 All of the software distributed in this stack is released under the [MIT license](http://opensource.org/licenses/MIT). Node.js ([see license](https://raw.githubusercontent.com/joyent/node/v0.10.29/LICENSE)) and MongoDB ([see license](http://www.mongodb.org/about/licensing/)) are distributed separately under different open source licenses.

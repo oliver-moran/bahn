@@ -1,6 +1,8 @@
 // we use FS to read the pakage.json and to display a pretty banner
 var FS = require("fs");
 
+// e.g. node bahn.js --port 8080 --database false --sockets false
+
 // bahn is global variable that contains
 //  - package info (including config): bahn.package / bahn.package.config
 //  - access to database: bahn.databse
@@ -11,6 +13,24 @@ global.bahn = {};
 // load up package.json
 bahn.package = require("./package");
 console.info("bahn configuration file loaded. Initialising services:\n");
+
+// get command line configs
+var argv = require("yargs").argv;
+bahn.package.config.port = (typeof argv.port == "undefined")
+    ? bahn.package.config.port : argv.port;
+bahn.package.config.sockets = (typeof argv.sockets == "undefined")
+    ? bahn.package.config.sockets : normaliseArg(argv.sockets);
+bahn.package.config.database = (typeof argv.database == "undefined")
+    ? bahn.package.config.database : normaliseArg(argv.database);
+
+// normalises a string to a boolean
+function normaliseArg(arg) {
+    switch (arg) {
+        case "true": return true;
+        case "false": return false;
+        default: return arg;
+    }
+}
 
 // show the pretty banner and version info
 var banner = FS.readFileSync("./banner.txt");
@@ -40,6 +60,5 @@ if (bahn.package.config.sockets) {
     console.info(" - Socket.io is listening at http://127.0.0.1:" + bahn.package.config.port);
 }
 
-
-// ...as we got road!
+// ...and we got road!
 console.info("\nReady.\n");
