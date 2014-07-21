@@ -9,39 +9,25 @@ Apart from bundling all of these together, the philosophy is otherwise agnostic.
 
 ## Installation ##
 
-To install, download and type:
+You can download and manually install/start the default bahn application directly. However, the recommended way is through the the [bahn command-line interface](https://github.com/oliver-moran/bahn-cli).
 
-    npm install
+After installing Node.js, type the following command:
+
+    npm install bahn -b
+
+Once installation is complete, navigate to an empty directory and type:
+
+    bahn
+
+This will download, install and start the latest release of the default bahn application (i.e. the latest release from this repository).
+
+By default the bahn application server will run on port 8080. To run it on a port 80, try:
+
+    bahn --port 80
     
-To run, type:
+For further help, see the [bahn command-line interface](https://github.com/oliver-moran/bahn-cli) documentation or type:
 
-    npm start
-
-You must have [Node.js installed](http://nodejs.org/download/) before installing. To use a MongoDB database, you must have [MongoDB installed](http://www.mongodb.org/downloads) or access to a MongoDB server.
-
-A seed TODO application that puts the stack through through its paces is included. Visit [http://127.0.0.1:8080/](http://127.0.0.1:8080/) and have a look in the `/application/` and `/application/static/` directories to get going.
-
-## Configuration ##
-
-Configuration is through the config setting in `/package.json`. The configuration options are:
-
-- `port`: (default: `8080`) The port number used by HTTP and WebSocket servers.
-
-- `database`: (default: `true`) If [truthy](http://docs.nodejitsu.com/articles/javascript-conventions/what-are-truthy-and-falsy-values) then the database module will be loaded. The type of the truthy value implicitly determines the type of database to use:
-
-  - If the value is a string then MongoDB will be used as the database. The value of the string may be the name of the local database to use (e.g. `"bahn"`) or a path to a remote database (e.g. `"username:password@example.com/bahn"`).
-  - Otherwise, a NeDB database will be used.
-  
-- `sockets`: (default: `true`) If truthy then the WebSocket module will be loaded.
-
-- `logging`: (default: `false`) If truthy then the HTTP loging will be enabled. The type of the truthy value implicitly determines the where logging will be directed:
-
-  - If the value is a string logging will be directed to a file indicated by the value of the string (e.g. `"./application/http.logs"`).
-  - Otherwise, a logging will be directed to `stdout` (i.e. the console).
-
-Configuration can also be set from the command line. For example:
-
-    node bahn.js --port 80 --database false --sockets false
+    bahn --help
 
 ## License ##
 
