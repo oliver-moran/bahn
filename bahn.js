@@ -1,3 +1,9 @@
+// First, add global execption handling.
+// This should save an application from dying in most circumstances.
+process.on("uncaughtException", function (err) {
+  console.log(err.stack);
+});
+
 // we use FS to read the pakage.json and to display a pretty banner
 var FS = require("fs");
 
@@ -12,7 +18,6 @@ global.bahn = {};
 
 // load up package.json
 bahn.package = require("./package");
-console.info("bahn configuration file loaded. Initialising services:\n");
 
 // get command line configs
 var argv = require("yargs").argv;
