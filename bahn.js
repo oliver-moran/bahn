@@ -18,6 +18,8 @@ global.bahn = {};
 
 // load up package.json
 bahn.package = require("./package");
+// make sure there is a config object
+if (!bahn.package.config) bahn.package.config = {};
 
 // get command line configs
 var argv = require("yargs").argv;
@@ -27,6 +29,8 @@ bahn.package.config.sockets = (typeof argv.sockets == "undefined")
     ? bahn.package.config.sockets : normaliseArg(argv.sockets);
 bahn.package.config.database = (typeof argv.database == "undefined")
     ? bahn.package.config.database : normaliseArg(argv.database);
+bahn.package.config.logging = (typeof argv.logging == "undefined")
+    ? bahn.package.config.logging : normaliseArg(argv.logging);
 
 // normalises a string to a boolean
 function normaliseArg(arg) {

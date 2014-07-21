@@ -1,11 +1,12 @@
 {
   "name": "bahn",
-  "version": "0.0.4",
+  "version": "0.0.5",
   "description": "A ready-for-road HTML5 application stack combining Bootstrap, AngularJS, H5BP, and Node.js (BAHN).",
   "config": {
     "port": 8080,
     "database": true,
-    "sockets": true
+    "sockets": true,
+    "logging": false
   },
   "main": "bahn.js",
   "scripts": {
@@ -49,6 +50,9 @@
     "mongojs": "~0.13.0",
     "socket.io": "~1.0.6",
     "node-uuid": "~1.4.1",
-    "yargs": "~1.2.6"
+    "yargs": "~1.2.6",
+    "morgan": "~1.2.0",
+    "compression": "~1.0.9",
+    "serve-favicon": "~2.0.1"
   }
 }

@@ -1,4 +1,10 @@
 var Express = require("express");
+var FS = require("fs");
+
+var logger  = require("morgan");
+var gzip = require("compression");
+var favicon = require("serve-favicon");
+
 var app = Express();
 
 /**
@@ -13,7 +19,22 @@ function HTTP (port) {
 // the Node HTTP object used by the HTTP.
 HTTP.prototype.server = null;
 
-/* CREATE NEW HTTP SERVICES HERE */
+// should we log server access
+if (bahn.package.config.logging) {
+    var options = {};
+    if (typeof bahn.package.config.logging == "string") {
+        FS.createWriteStream(bahn.package.config.logging, {flags: "a"});
+    }
+    app.use(logger("combined", options));
+}
+
+// compress tranfsers
+app.use(gzip());
+
+// set the default path for favicons
+app.use(favicon("./application/public/favicon.ico"));
+
+/* CREATE NEW SERVICES HERE */
 
 app.get("/api/todo/tasks", function(req, res){
     bahn.database.tasks.find({}, function (err, docs) {

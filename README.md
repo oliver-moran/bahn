@@ -34,9 +34,14 @@ Configuration is through the config setting in `/package.json`. The configuratio
   
 - `sockets`: (default: `true`) If truthy then the WebSocket module will be loaded.
 
+- `logging`: (default: `false`) If truthy then the HTTP loging will be enabled. The type of the truthy value implicitly determines the where logging will be directed:
+
+  - If the value is a string logging will be directed to a file indicated by the value of the string (e.g. `"./application/http.logs"`).
+  - Otherwise, a logging will be directed to `stdout` (i.e. the console).
+
 Configuration can also be set from the command line. For example:
 
-    node bahn.js --port 8081 --database false --sockets false
+    node bahn.js --port 80 --database false --sockets false
 
 ## License ##
 
