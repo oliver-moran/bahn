@@ -13,7 +13,7 @@ You can download and manually install/start the default bahn application directl
 
 After installing Node.js, type the following command:
 
-    npm install bahn -b
+    npm install bahn -g
 
 Once installation is complete, navigate to an empty directory and type:
 
