@@ -57,6 +57,13 @@ if (bahn.package.config.database) {
         + " database is ready.");
 }
 
+// set up the logging strea
+if (bahn.package.config.logging) {
+    bahn.LOG_OPTIONS = (typeof bahn.package.config.logging == "string")
+        ? { stream: FS.createWriteStream(bahn.package.config.logging, {flags: "a"}) }
+        : { stream: process.stdout }
+}
+
 // ...crank up the HTTP service...
 var HTTP = require("./application/http.js");
 bahn.http = new HTTP(bahn.package.config.port);
