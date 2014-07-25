@@ -20,7 +20,8 @@ HTTP.prototype.server = null;
 /* CREATE NEW SERVICES HERE */
 
 // logs, gzip and default favicon
-if (bahn.LOG_OPTIONS) app.use(logger("combined", bahn.LOG_OPTIONS));
+// set up the logging strea
+app.use(logger("combined", bahn.HTTP_ACCESS_LOG));
 app.use(gzip());
 app.use(favicon("./application/public/favicon.ico"));
 

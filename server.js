@@ -29,8 +29,6 @@ bahn.package.config.sockets = (typeof argv.sockets == "undefined")
     ? bahn.package.config.sockets : normaliseArg(argv.sockets);
 bahn.package.config.database = (typeof argv.database == "undefined")
     ? bahn.package.config.database : normaliseArg(argv.database);
-bahn.package.config.logging = (typeof argv.logging == "undefined")
-    ? bahn.package.config.logging : normaliseArg(argv.logging);
 
 // normalises a string to a boolean
 function normaliseArg(arg) {
@@ -57,12 +55,8 @@ if (bahn.package.config.database) {
         + " database is ready.");
 }
 
-// set up the logging strea
-if (bahn.package.config.logging) {
-    bahn.LOG_OPTIONS = (typeof bahn.package.config.logging == "string")
-        ? { stream: FS.createWriteStream(bahn.package.config.logging, {flags: "a"}) }
-        : { stream: process.stdout }
-}
+// set up the access log file
+bahn.HTTP_ACCESS_LOG = { stream: FS.createWriteStream("application/access.log", {flags: "a"}) };
 
 // ...crank up the HTTP service...
 var HTTP = require("./application/http.js");
