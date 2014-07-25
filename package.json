@@ -1,6 +1,6 @@
 {
   "name": "bahn",
-  "version": "0.0.7",
+  "version": "0.0.8",
   "description": "A ready-for-road HTML5 application stack combining Bootstrap, AngularJS, H5BP, and Node.js (BAHN).",
   "config": {
     "port": 8080,
@@ -8,10 +8,10 @@
     "sockets": true,
     "logging": false
   },
-  "main": "bahn.js",
+  "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node bahn.js"
+    "start": "node server.js"
   },
   "repository": {
     "type": "git",
